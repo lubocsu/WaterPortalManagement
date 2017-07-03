@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validate()
+{var mno=lfm.mno.value;
+ 
+ if(mno.length!=10)
+	 {window.alert("Invalid data");
+return false;}
+ else return true;
+}
+</script>
+</head>
+
+<body>
+<h1>CHECK USERS PROFILE</h1>
+<br/><br/>
+<form name="lfm" method="post" action="prof.jsp"onsubmit="return validate()" >
+ENTER USER MOBILE NUMBER : <input type="text" name="mob" />
+<br/><br/>
+<input type="submit" value="CheckProfile"/>
+<input type="reset" value="Clear"/><br/><br/>
+
+</form>
+<form method="post" action="delt" target="_blank">
+<input type="submit" value="DELETE"/>
+</form>
+
+</html>

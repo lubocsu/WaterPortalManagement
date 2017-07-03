@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validate()
+{var eid=rpt.eid.value;
+if((eid.lastIndexOf(".")-3)>eid.indexOf("@")&&eid.lastIndexOf("@")==eid.IndexOf("@"))
+	{if(rpt.sub.value!=""&&rpt.rpt.value!="")return true;
+	else return false;}
+else{window.alert("enter valid eid");return false;
+}
+	}
+	</script>
+</head>
+<body>
+<img src="D:\eclipse_project_saved_content\WMS\logo.jpg" height="25%" width="550" >
+<form>
+<button type="submit" formaction="index.html" >HOME</button>
+</form>
+<form name="rpt" method="post" action="ask" target="_parent" onsubmit="return validate()">
+<h1>ASK A QUESTION</h1>
+<br/><br/>
+<h2>EMAIL-ID :</h2><input type="text" name="eid" />
+<h2>Subject:</h2><textarea  rows="1" cols="100" name="sub" required></textarea>[max of 100 characters] <br/><br/>
+<h2>Report :</h2><textarea rows="7" cols="100" name="rpt" required></textarea>[max of 700 characters]<br/><br/>
+<input type="submit" value="Send"/>
+</form>
+</body>
+</html>
+
+

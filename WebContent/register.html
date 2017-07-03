@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration Form</title>
+<script type="text/javascript">
+function validate()
+{var fnm=rfm.fnm.value;
+var lnm=rfm.lnm.value;
+var dno=rfm.dno.value;
+var st=rfm.st.value;
+var ar=rfm.ar.value;
+var cty=rfm.cty.value;
+var zip=rfm.zip.value;
+var mob=rfm.mob.value;
+var eid=rfm.eid.value;
+var pwd=rfm.pwd.value;
+var cpwd=rfm.cpwd.value;
+
+if(fnm!=""&&lnm!=""&&dno!=""&&ar!=""&&zip!=""&&pwd!=""&&cpwd!="")
+	{if(cty=="CHENNAI"||cty=="chennai"||cty=="Chennai")
+		{if(zip.length=="5"&&isNaN(zip)==false)
+			{if(isNaN(mob)==false&&mob.length=="10")
+				{if(eid.length>=6&&(eid.lastIndexOf(".")-3)>=eid.indexOf("@"))
+					{if(pwd.length>6)
+					  {if(pwd==cpwd)
+						return true;
+					   else
+						{window.alert("Password Dosent Match");
+						return false;
+						}
+					}
+					else
+						{window.alert("Password should be of atleast 6 characters");
+						return false;
+						}
+						}
+				else
+					{window.alert("Invalid E-Mail ID");
+					return false;}
+			}
+		    else
+			{window.alert("Invalid Mobile Number");
+			return false;}
+		}
+	else
+		{window.alert("Invalid Zip Code");
+		return false;}
+	}
+else
+	{window.alert("Sorry service unavailable in your city");
+	return false;}
+}
+
+else
+	{window.alert("Fill In all the Fields");
+	return false;
+	}
+}
+</script>
+</head>
+<body>
+<img src="D:\eclipse_project_saved_content\WMS\logo.jpg" height="25%" width="550" >
+<form>
+<button type="submit" formaction="index.html" >HOME</button>
+</form>
+<form name="rfm" method="post" action="reg" onsubmit="return validate()">
+<h1>
+USER REGISTRATION FORM
+</h1>
+First Name:<input type="text" name="fnm" size="30">
+<br/><br/>
+Last Name:<input type="text" name="lnm" size="30"><br/><br/>
+<h1>ADDRESS:</h1><br/>
+Door Number:<input type="text" name="dno" size="5"><br/><br/>
+Street:<input type="text" name="st" size="30"><br/><br/>
+Area:<input type="text" name="ar" size="30"><br/><br/>
+City:<input type="text" name="cty" size="30">[!!PLEASE FILL IN ALL CAPS]<br/><br/>
+ZipCode: 6 <input type="number" name="zip" size="5"><br/><br/>
+MobileNumber:<input type="number" name="mob" size="10"><br/><br/>
+
+ Email-ID:<input type="text" name="eid" size="30"><br/><br/>
+Password:<input type="password" name="pwd" size="30"><br/><br/>
+Confirm Password:<input type="password" name="cpwd" size="30"><br/><br/>
+<input type="submit"value="Register User">
+<input type="reset" value="Clear">
+</form>
+</body>
+</html>

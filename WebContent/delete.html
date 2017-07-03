@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validate()
+{var mno=lfm.mno.value;
+ var pwd=lfm.pwd.value;
+ if(mno.length!=10||pwd.length<6)
+	 {window.alert("Invalid data");
+return false;}
+ else return true;
+}
+</script>
+<style type="text/css">
+button{
+align:"right";
+}
+</style>
+
+</head>
+<body>
+
+<form name="lfm" method="post" action="del.jsp"onsubmit="return validate()" >
+<center>
+<img src="D:\eclipse_project_saved_content\WMS\empty-profile.png" height="250" width="250">
+<br/><br/><br/>
+Mobile Number : <input type="text" name="mno" size="11"/>
+<br/><br/>
+Password :<input type="password" name="pwd" size="10"/><br/><br/>
+<input type="submit" value="LogIn"/>
+<input type="reset" value="Clear"/><br/><br/>
+
+
+
+</center></form>
+<form><center><button type="submit" formaction="umyac.html" >CANCEL</button><br/><br/></center></form>
+</body>
+</html>

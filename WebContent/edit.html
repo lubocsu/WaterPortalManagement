@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration Form</title>
+<script type="text/javascript">
+function validate()
+{var fnm=rfm.fnm.value;
+var lnm=rfm.lnm.value;
+var dno=rfm.dno.value;
+var st=rfm.st.value;
+var ar=rfm.ar.value;
+var cty=rfm.cty.value;
+var zip=rfm.zip.value;
+
+var eid=rfm.eid.value;
+
+
+if(fnm!=""&&lnm!=""&&dno!=""&&ar!=""&&zip!=""&&pwd!=""&&cpwd!="")
+	{if(cty=="CHENNAI"||cty=="chennai"||cty=="Chennai")
+		{if(zip.length=="5"&&isNaN(zip)==false)
+			{if(eid.length>=6&&(eid.lastIndexOf(".")-3)>=eid.indexOf("@"))
+				{return true;
+				}	
+				else
+					{window.alert("Invalid E-Mail ID");
+					return false;}
+			}
+		    
+		
+	else
+		{window.alert("Invalid Zip Code");
+		return false;}
+	}
+else
+	{window.alert("Sorry service unavailable in your city");
+	return false;}
+}
+
+else
+	{window.alert("Fill In all the Fields");
+	return false;
+	}
+}
+</script>
+</head>
+<body>
+<form>
+<button type="submit" formaction="user.html" >HOME</button>
+</form>
+<form name="rfm" method="post" action="edt" onsubmit="return validate()">
+<h1>
+REFILL THE FORM AND SUBMIT
+</h1>
+First Name:<input type="text" name="fnm" size="30">
+<br/><br/>
+Last Name:<input type="text" name="lnm" size="30"><br/><br/>
+<h1>ADDRESS:</h1><br/>
+Door Number:<input type="text" name="dno" size="5"><br/><br/>
+Street:<input type="text" name="st" size="30"><br/><br/>
+Area:<input type="text" name="ar" size="30"><br/><br/>
+City:<input type="text" name="cty" size="30">[!!PLEASE FILL IN ALL CAPS]<br/><br/>
+ZipCode: 6 <input type="number" name="zip" size="5"><br/><br/>
+
+ Email-ID:<input type="text" name="eid" size="30"><br/><br/>
+
+<input type="submit"value="APPLY">
+<input type="reset" value="Clear">
+</form>
+</body>
+</html>

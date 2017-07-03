@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validate()
+{var npwd=lfm.npwd.value;
+ var ncpwd=lfm.ncpwd.value;
+ if(npwd!=ncpwd)
+	 {window.alert("Invalid data");
+return false;}
+ else 
+	 {window.alert("return");
+	 return true;
+	 }
+}
+</script>
+</head>
+<body>
+<form>
+<button type="submit" formaction="user.html" >HOME</button>
+</form>
+<h1>CHANGE PASSWORD</h1>
+<form name="lfm" method="post" onsubmit="return validate()" action="update1">
+
+ENTER NEW PASSWORD : <input type="password" name="npwd"/><br/><br/>
+CONFIRM NEW PASSWORD : <input type="password" name="cnpwd"/><br/><br/>
+ <input type="submit" value="APPLY"/>
+
+</form>
+</body>
+</html>
